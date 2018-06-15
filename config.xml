@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
-	id = "com.mycompany.myphonegapapp811899"
+	id = "com.mycompany.myphonegapapp81189999"
     versionCode = "12"
     version = "2.4"
 	android-versionCode="103050" 
@@ -16,7 +16,7 @@ xmlns:gap="http://phonegap.com/ns/1.0"
 		android:anyDensity="true"
 		/>
 	</edit-config>
-    <name>Machine Learning</name>
+    <name>Python AI</name>
     
     <description>TestApp for AdMob</description>
     <author email="ingalbi@gmail.com" href="http://ingalb.info/">ingalb</author>
