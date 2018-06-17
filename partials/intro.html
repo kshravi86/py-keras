@@ -11783,14 +11783,7 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Keras is a minimalist, highly modular deep neural network library written in Python and built on top of Theano and Tensorflow. This allows it to accelerate computations by offloading them to one or more GPUs. It is also easier to use than raw Theano and Tensorflow, as it includes several functionalities:</p>
-<ul>
-<li>Standard APIs for sequential and functional models with feedforward, convolutional, and recurrent layers</li>
-<li>Several optimization algorithms and advanced activation functions</li>
-<li>Monitoring/callback support</li>
-<li>Easily extensible</li>
-</ul>
-
+<h1 id="Keras-is-a-minimalist,-highly-modular-deep-neural-network-library-written-in-Python-and-built-on-top-of-Theano-and-Tensorflow.-This-allows-it-to-accelerate-computations-by-offloading-them-to-one-or-more-GPUs.-It-is-also-easier-to-use-than-raw-Theano-and-Tensorflow,-as-it-includes-several-functionalities:">Keras is a minimalist, highly modular deep neural network library written in Python and built on top of Theano and Tensorflow. This allows it to accelerate computations by offloading them to one or more GPUs. It is also easier to use than raw Theano and Tensorflow, as it includes several functionalities:<a class="anchor-link" href="#Keras-is-a-minimalist,-highly-modular-deep-neural-network-library-written-in-Python-and-built-on-top-of-Theano-and-Tensorflow.-This-allows-it-to-accelerate-computations-by-offloading-them-to-one-or-more-GPUs.-It-is-also-easier-to-use-than-raw-Theano-and-Tensorflow,-as-it-includes-several-functionalities:">&#182;</a></h1><h1 id="Standard-APIs-for-sequential-and-functional-models-with-feedforward,-convolutional,-and-recurrent-layers">Standard APIs for sequential and functional models with feedforward, convolutional, and recurrent layers<a class="anchor-link" href="#Standard-APIs-for-sequential-and-functional-models-with-feedforward,-convolutional,-and-recurrent-layers">&#182;</a></h1><h1 id="Several-optimization-algorithms-and-advanced-activation-functions">Several optimization algorithms and advanced activation functions<a class="anchor-link" href="#Several-optimization-algorithms-and-advanced-activation-functions">&#182;</a></h1><h1 id="Monitoring/callback-support">Monitoring/callback support<a class="anchor-link" href="#Monitoring/callback-support">&#182;</a></h1><h1 id="Easily-extensible">Easily extensible<a class="anchor-link" href="#Easily-extensible">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11798,102 +11791,15 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Simple models, such as feedforward networks, are straightforward to implement. The code below is the entire definition of a simple digit classifier for the MNIST dataset (without the data preprocessing):</p>
-
+<h1 id="Simple-models,-such-as-feedforward-networks,-are-straightforward-to-implement.-The-code-below-is-the-entire-definition-of-a-simple-digit-classifier-for-the-MNIST-dataset-(without-the-data-preprocessing):">Simple models, such as feedforward networks, are straightforward to implement. The code below is the entire definition of a simple digit classifier for the MNIST dataset (without the data preprocessing):<a class="anchor-link" href="#Simple-models,-such-as-feedforward-networks,-are-straightforward-to-implement.-The-code-below-is-the-entire-definition-of-a-simple-digit-classifier-for-the-MNIST-dataset-(without-the-data-preprocessing):">&#182;</a></h1>
 </div>
 </div>
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="k">import</span> <span class="n">print_function</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># for reproducibility</span>
-
-<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
-<span class="kn">from</span> <span class="nn">keras.layers.core</span> <span class="k">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Activation</span>
-
-<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">784</span><span class="p">,)))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
-<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
-
-<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
-</pre></div>
-
-</div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stderr output_text">
-<pre>Using Theano backend.
-Using gpu device 0: Quadro K2000M (CNMeM is disabled, cuDNN 5005)
-</pre>
-</div>
-</div>
-
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
-<div class="output_subarea output_stream output_stdout output_text">
-<pre>____________________________________________________________________________________________________
-Layer (type)                     Output Shape          Param #     Connected to                     
-====================================================================================================
-dense_1 (Dense)                  (None, 512)           401920      dense_input_1[0][0]              
-____________________________________________________________________________________________________
-activation_1 (Activation)        (None, 512)           0           dense_1[0][0]                    
-____________________________________________________________________________________________________
-dense_2 (Dense)                  (None, 512)           262656      activation_1[0][0]               
-____________________________________________________________________________________________________
-activation_2 (Activation)        (None, 512)           0           dense_2[0][0]                    
-____________________________________________________________________________________________________
-dense_3 (Dense)                  (None, 10)            5130        activation_2[0][0]               
-____________________________________________________________________________________________________
-activation_3 (Activation)        (None, 10)            0           dense_3[0][0]                    
-====================================================================================================
-Total params: 669706
-____________________________________________________________________________________________________
-</pre>
-</div>
-</div>
-
-</div>
-</div>
-
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>The code is short but there's a lot going on here, so let's analyze the code in parts.</p>
-<ul>
-<li><p><code>model = Sequential()</code>: <code>Sequential</code> models are stacks of layers, where the output of the previous layer is the input of the current layer.</p>
-</li>
-<li><p><code>model.add</code>: adds a layer to the model.</p>
-</li>
-<li><p><code>Dense</code>: a <code>Dense</code> layer simply performs an affine transform $z = Wx + b$.</p>
-</li>
-<li><p><code>Activation</code>: applies an elementwise non-linearity $g()$ to the output of the previous layer: $a = g(z)$. You do not have to add it separately: the initializer for most layers in Keras, including <code>Dense</code>, has a keyword argument 'activation'.</p>
-</li>
-</ul>
-
+<h1 id="The-code-is-short-but-there's-a-lot-going-on-here,-so-let's-analyze-the-code-in-parts.">The code is short but there's a lot going on here, so let's analyze the code in parts.<a class="anchor-link" href="#The-code-is-short-but-there's-a-lot-going-on-here,-so-let's-analyze-the-code-in-parts.">&#182;</a></h1><h1 id="model-=-Sequential():-Sequential-models-are-stacks-of-layers,-where-the-output-of-the-previous-layer-is-the-input-of-the-current-layer."><code>model = Sequential()</code>: <code>Sequential</code> models are stacks of layers, where the output of the previous layer is the input of the current layer.<a class="anchor-link" href="#model-=-Sequential():-Sequential-models-are-stacks-of-layers,-where-the-output-of-the-previous-layer-is-the-input-of-the-current-layer.">&#182;</a></h1><h1 id="model.add:-adds-a-layer-to-the-model."><code>model.add</code>: adds a layer to the model.<a class="anchor-link" href="#model.add:-adds-a-layer-to-the-model.">&#182;</a></h1><h1 id="Dense:-a-Dense-layer-simply-performs-an-affine-transform-$z-=-Wx-+-b$."><code>Dense</code>: a <code>Dense</code> layer simply performs an affine transform $z = Wx + b$.<a class="anchor-link" href="#Dense:-a-Dense-layer-simply-performs-an-affine-transform-$z-=-Wx-+-b$.">&#182;</a></h1><h1 id="Activation:-applies-an-elementwise-non-linearity-$g()$-to-the-output-of-the-previous-layer:-$a-=-g(z)$.-You-do-not-have-to-add-it-separately:-the-initializer-for-most-layers-in-Keras,-including-Dense,-has-a-keyword-argument-'activation'."><code>Activation</code>: applies an elementwise non-linearity $g()$ to the output of the previous layer: $a = g(z)$. You do not have to add it separately: the initializer for most layers in Keras, including <code>Dense</code>, has a keyword argument 'activation'.<a class="anchor-link" href="#Activation:-applies-an-elementwise-non-linearity-$g()$-to-the-output-of-the-previous-layer:-$a-=-g(z)$.-You-do-not-have-to-add-it-separately:-the-initializer-for-most-layers-in-Keras,-including-Dense,-has-a-keyword-argument-'activation'.">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -11949,10 +11855,38 @@ ________________________________________________________________________________
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Keras is based on Theano or Tensorflow, which are libraries that allow you to define mathematical expressions symbolically and get an optimized implementation of the expressions and its gradients "for free". However, that means models have to be compiled prior to training/inference, as the symbolic expressions need to be converted to C++/CUDA code and compiled. Your Python code will automatically interact with this compiled code, so you do not need to worry about interfacing.</p>
+<h1 id="Keras-is-based-on-Theano-or-Tensorflow,-which-are-libraries-that-allow-you-to-define-mathematical-expressions-symbolically-and-get-an-optimized-implementation-of-the-expressions-and-its-gradients-&quot;for-free&quot;.-However,-that-means-models-have-to-be-compiled-prior-to-training/inference,-as-the-symbolic-expressions-need-to-be-converted-to-C++/CUDA-code-and-compiled.-Your-Python-code-will-automatically-interact-with-this-compiled-code,-so-you-do-not-need-to-worry-about-interfacing.">Keras is based on Theano or Tensorflow, which are libraries that allow you to define mathematical expressions symbolically and get an optimized implementation of the expressions and its gradients "for free". However, that means models have to be compiled prior to training/inference, as the symbolic expressions need to be converted to C++/CUDA code and compiled. Your Python code will automatically interact with this compiled code, so you do not need to worry about interfacing.<a class="anchor-link" href="#Keras-is-based-on-Theano-or-Tensorflow,-which-are-libraries-that-allow-you-to-define-mathematical-expressions-symbolically-and-get-an-optimized-implementation-of-the-expressions-and-its-gradients-&quot;for-free&quot;.-However,-that-means-models-have-to-be-compiled-prior-to-training/inference,-as-the-symbolic-expressions-need-to-be-converted-to-C++/CUDA-code-and-compiled.-Your-Python-code-will-automatically-interact-with-this-compiled-code,-so-you-do-not-need-to-worry-about-interfacing.">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># from __future__ import print_function</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>  <span class="c1"># for reproducibility</span>
+
+<span class="kn">from</span> <span class="nn">keras.models</span> <span class="k">import</span> <span class="n">Sequential</span>
+<span class="kn">from</span> <span class="nn">keras.layers.core</span> <span class="k">import</span> <span class="n">Dense</span><span class="p">,</span> <span class="n">Dropout</span><span class="p">,</span> <span class="n">Activation</span>
+
+<span class="n">model</span> <span class="o">=</span> <span class="n">Sequential</span><span class="p">()</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="n">input_shape</span><span class="o">=</span><span class="p">(</span><span class="mi">784</span><span class="p">,)))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">512</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;relu&#39;</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Dense</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">model</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Activation</span><span class="p">(</span><span class="s1">&#39;softmax&#39;</span><span class="p">))</span>
+
+<span class="n">model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
 
 </div>
 </div>
+</div>
+
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
@@ -11975,13 +11909,15 @@ ________________________________________________________________________________
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>When compiling a model, you also need to pass at least two other elements:</p>
-<ol>
-<li>The loss that will be optimized during training</li>
-<li>An optimizer algorithm, which will be responsible for updating the model after each iteration</li>
-</ol>
-<p>You can also optionally pass a number of metrics that will be evaluated at each iteration, but that are not used in the cost function. In this case, we want to know the accuracy of the optimizer.</p>
-
+<h1 id="When-compiling-a-model,-you-also-need-to-pass-at-least-two-other-elements:">When compiling a model, you also need to pass at least two other elements:<a class="anchor-link" href="#When-compiling-a-model,-you-also-need-to-pass-at-least-two-other-elements:">&#182;</a></h1><h1 id="1.-The-loss-that-will-be-optimized-during-training">1. The loss that will be optimized during training<a class="anchor-link" href="#1.-The-loss-that-will-be-optimized-during-training">&#182;</a></h1><h1 id="2.-An-optimizer-algorithm,-which-will-be-responsible-for-updating-the-model-after-each-iteration">2. An optimizer algorithm, which will be responsible for updating the model after each iteration<a class="anchor-link" href="#2.-An-optimizer-algorithm,-which-will-be-responsible-for-updating-the-model-after-each-iteration">&#182;</a></h1><h1 id="You-can-also-optionally-pass-a-number-of-metrics-that-will-be-evaluated-at-each-iteration,-but-that-are-not-used-in-the-cost-function.-In-this-case,-we-want-to-know-the-accuracy-of-the-optimizer.">You can also optionally pass a number of metrics that will be evaluated at each iteration, but that are not used in the cost function. In this case, we want to know the accuracy of the optimizer.<a class="anchor-link" href="#You-can-also-optionally-pass-a-number-of-metrics-that-will-be-evaluated-at-each-iteration,-but-that-are-not-used-in-the-cost-function.-In-this-case,-we-want-to-know-the-accuracy-of-the-optimizer.">&#182;</a></h1>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="We-can-also-plot-a-high-level-graph-to-visualize-the-model.-Not-very-exciting-for-models-like-this-but-can-be-really-convenient-once-you-have-models-whose-architecture-is-instantiated-programmatically-or-multiple-input/output-models.">We can also plot a high-level graph to visualize the model. Not very exciting for models like this but can be really convenient once you have models whose architecture is instantiated programmatically or multiple input/output models.<a class="anchor-link" href="#We-can-also-plot-a-high-level-graph-to-visualize-the-model.-Not-very-exciting-for-models-like-this-but-can-be-really-convenient-once-you-have-models-whose-architecture-is-instantiated-programmatically-or-multiple-input/output-models.">&#182;</a></h1><h1 id="Note:-you-have-to-install-the-pydot-ng-package-for-this-to-work.-To-install-it-with-Conda,-call-conda-install-pydot-ng.">Note: you have to install the <code>pydot-ng</code> package for this to work. To install it with Conda, call <code>conda install pydot-ng</code>.<a class="anchor-link" href="#Note:-you-have-to-install-the-pydot-ng-package-for-this-to-work.-To-install-it-with-Conda,-call-conda-install-pydot-ng.">&#182;</a></h1>
 </div>
 </div>
 </div>
@@ -12002,16 +11938,6 @@ ________________________________________________________________________________
 </div>
 </div>
 
-</div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
-</div>
-<div class="inner_cell">
-<div class="text_cell_render border-box-sizing rendered_html">
-<p>We can also plot a high-level graph to visualize the model. Not very exciting for models like this but can be really convenient once you have models whose architecture is instantiated programmatically or multiple input/output models.</p>
-<p>Note: you have to install the <code>pydot-ng</code> package for this to work. To install it with Conda, call <code>conda install pydot-ng</code>.</p>
-
-</div>
-</div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
