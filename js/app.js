@@ -14,7 +14,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/', {templateUrl: 'partials/homeView.html', controller: 'HomeCtrl'});
         $routeProvider.when('/view1', {templateUrl: 'partials/intro.html'});
-        $routeProvider.when('/view2', {templateUrl: 'partials/linear_regression.html'});
+        $routeProvider.when('/view2', {templateUrl: 'partials/seqmodels.html'});
         $routeProvider.when('/view3', {templateUrl: 'partials/helloworld.html'});
         $routeProvider.when('/view4', {templateUrl: 'partials/basic_operations.html'});
         $routeProvider.when('/view5', {templateUrl: 'partials/logistic_regression.html'});
