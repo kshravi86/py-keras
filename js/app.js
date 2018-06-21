@@ -18,7 +18,7 @@ var myApp = angular.module('myApp', ['myApp.filters', 'myApp.services', 'myApp.d
         $routeProvider.when('/view3', {templateUrl: 'partials/imdb_cnn.html'});
         $routeProvider.when('/view4', {templateUrl: 'partials/imdb_cnn_lstm.html'});
         $routeProvider.when('/view5', {templateUrl: 'partials/imdb_lstm.html'});
-        $routeProvider.when('/view6', {templateUrl: 'partials/BasicTensorFlow.html'});
+        $routeProvider.when('/view6', {templateUrl: 'partials/addition_rnn.html'});
         $routeProvider.when('/view7', {templateUrl: 'partials/ML for Beginners.html'});
         $routeProvider.when('/view8', {templateUrl: 'partials/random_forest.html'});
 		$routeProvider.when('/view9',{templateUrl:'partials/0-welcome.html'});
